@@ -21,6 +21,8 @@
     lua-mode
     auto-complete
     js2-mode
+    php-mode
+    flycheck
     ))
 ;;Install required packages
 (cl-loop for p in my-require-packages
@@ -37,6 +39,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(flycheck-phpcs-standard "PSR2")
+ '(frame-background-mode (quote dark))
  '(inhibit-startup-screen t)
 )
 (custom-set-faces
@@ -53,18 +57,26 @@
 ;; auto-complete
 (ac-config-default)
 
+;; php-mode with flycheck
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(require 'flycheck)
+
+(add-hook 'php-mode-hook 'flycheck-mode)
+
 ;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)) 
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)) 
 (defun my-web-mode-hook () "Hooks for Web mode." 
-       (setq web-mode-markup-indent-offset 2) 
-       (setq web-mode-css-indent-offset 2)
-       (setq web-mode-code-indent-offset 2)
+       (setq web-mode-markup-indent-offset 4) 
+       (setq web-mode-css-indent-offset 4)
+       (setq web-mode-code-indent-offset 4)
        (setq indent-tabs-mode nil)
-       (setq tab-width 2)
+       (setq tab-width 4)
 ) 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
@@ -123,10 +135,6 @@
     (message "Done.")))
 (global-set-key (kbd "C-c <up>") 'resize-window)
 
-
-;; js2
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
 ;; match brackets
 (show-paren-mode 1)
 (global-set-key (kbd "M-<left>") 'backward-sexp)
@@ -148,5 +156,8 @@
       auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
+
+;;; set color theme
+(load-theme 'tango-dark)
 
 ;;; .emacs ends here
