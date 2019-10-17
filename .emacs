@@ -72,11 +72,11 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)) 
 (defun my-web-mode-hook () "Hooks for Web mode." 
-       (setq web-mode-markup-indent-offset 4) 
-       (setq web-mode-css-indent-offset 4)
-       (setq web-mode-code-indent-offset 4)
+       (setq web-mode-markup-indent-offset 2) 
+       (setq web-mode-css-indent-offset 2)
+       (setq web-mode-code-indent-offset 2)
        (setq indent-tabs-mode nil)
-       (setq tab-width 4)
+       (setq tab-width 2)
 ) 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
