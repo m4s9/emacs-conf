@@ -160,4 +160,8 @@
 ;;; set color theme
 (load-theme 'tango-dark)
 
+;;; mark trailing whitespaces
+(setq-default show-trailing-whitespace t)
+(set-face-background 'trailing-whitespace "yellow")
+
 ;;; .emacs ends here
