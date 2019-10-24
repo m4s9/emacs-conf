@@ -71,6 +71,10 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)) 
+; set jsx content mode for js[x] files (in web-mode)
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.js[x]?\\'")))
+; web-mode indents
 (defun my-web-mode-hook () "Hooks for Web mode." 
        (setq web-mode-markup-indent-offset 2) 
        (setq web-mode-css-indent-offset 2)
