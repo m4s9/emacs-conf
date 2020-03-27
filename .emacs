@@ -1,6 +1,13 @@
 (require 'cl)
 
 ;;;;;;;;;;;;;;;;;;;;;
+; NOTES
+;
+; Needed for php flycheck: sudo apt install php-codesniffer
+;
+;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;
 ;;; HANDLE PACKAGE INSTALLS
 ;;;;;;;;;;;;;;;;;;;;;
 (when (>= emacs-major-version 24)
