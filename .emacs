@@ -176,4 +176,7 @@
 (setq-default show-trailing-whitespace t)
 (set-face-background 'trailing-whitespace "yellow")
 
+;;; don't create lock files
+(setq create-lockfiles nil)
+
 ;;; .emacs ends here
