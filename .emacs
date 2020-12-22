@@ -30,6 +30,7 @@
     js2-mode
     php-mode
     flycheck
+    git-gutter
     ))
 ;;Install required packages
 (cl-loop for p in my-require-packages
@@ -178,5 +179,9 @@
 
 ;;; don't create lock files
 (setq create-lockfiles nil)
+
+;;; show Git changes
+(require 'git-gutter)
+(global-git-gutter-mode +1)
 
 ;;; .emacs ends here
