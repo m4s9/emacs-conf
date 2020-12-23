@@ -184,4 +184,9 @@
 (require 'git-gutter)
 (global-git-gutter-mode +1)
 
+;;; php doc -> https://github.com/moskalyovd/emacs-php-doc-block
+(add-to-list 'load-path "~/.emacs.d/local-packages/emacs-php-doc-block")
+(require 'php-doc-block)
+(global-set-key (kbd "C-c <down>") 'php-doc-block)
+
 ;;; .emacs ends here
