@@ -48,7 +48,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(flycheck-checker-error-threshold 1024)
- '(flycheck-phpcs-standard "PSR2")
+ '(flycheck-phpcs-standard "PSR12")
  '(frame-background-mode (quote dark))
  '(inhibit-startup-screen t)
 )
