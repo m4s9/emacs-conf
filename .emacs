@@ -65,6 +65,8 @@
 
 ;; auto-complete
 (ac-config-default)
+(setq ac-auto-start nil)
+(global-set-key (kbd "C-x <up>") 'ac-start)
 
 ;; php-mode with flycheck
 (require 'php-mode)
