@@ -175,9 +175,12 @@
 ;;; set color theme
 (load-theme 'tango-dark)
 
-;;; mark trailing whitespaces
-(setq-default show-trailing-whitespace t)
-(set-face-background 'trailing-whitespace "yellow")
+;;; mark trailing whitespaces (and tabs)
+;; These does not work so well anymore (with Ubuntu20.04, emacs 26.3)
+;(setq-default show-trailing-whitespace t)
+;(set-face-background 'trailing-whitespace "yellow")
+;; But this works
+(setq whitespace-style '(face trailing tabs))
 
 ;;; don't create lock files
 (setq create-lockfiles nil)
